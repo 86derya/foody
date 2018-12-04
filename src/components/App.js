@@ -1,7 +1,8 @@
 import React from 'react';
 
-import Header from './App-Header';
+import Menu from './Menu';
+import DishList from '../data/DishList.json';
 
-const App = () => <Header />;
+const App = () => <Menu dishList={DishList} />;
 
 export default App;
