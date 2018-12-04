@@ -1,6 +1,5 @@
 import React from 'react';
-import UserAuthorizationForm from './UserAuthorization';
+import DishComment from './DishComment';
 
-const App = () => <UserAuthorizationForm />;
-
+const App = () => <DishComment id={1} />;
 export default App;
