@@ -1,8 +1,6 @@
 import React from 'react';
+import UserAuthorizationForm from './UserAuthorization';
 
-import Menu from './Menu';
-import DishList from '../data/DishList.json';
-
-const App = () => <Menu dishList={DishList} />;
+const App = () => <UserAuthorizationForm />;
 
 export default App;
