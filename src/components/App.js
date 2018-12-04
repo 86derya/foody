@@ -1,5 +1,6 @@
 import React from 'react';
-import DishComment from './DishComment';
+import OrderHistory from './OrderHistory';
+import Orders from '../data/order-history.json';
 
-const App = () => <DishComment id={1} />;
+const App = () => <OrderHistory orders={Orders} />;
 export default App;
