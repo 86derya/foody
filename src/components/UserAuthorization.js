@@ -4,23 +4,23 @@ import SignUp from './SignUp';
 
 export default class UserAuthorizationForm extends Component {
   state = {
-    on: true,
+    isSignedOn: true,
   };
 
   handleCheckSignIn = () => {
     this.setState({
-      on: true,
+      isSignedOn: true,
     });
   };
 
   handleCheckSignUp = () => {
     this.setState({
-      on: false,
+      isSignedOn: false,
     });
   };
 
   render() {
-    const { on } = this.state;
+    const { isSignedOn } = this.state;
     return (
       <div>
         <button type="button" onClick={this.handleCheckSignIn}>
@@ -29,7 +29,7 @@ export default class UserAuthorizationForm extends Component {
         <button type="button" onClick={this.handleCheckSignUp}>
           Sign up{' '}
         </button>{' '}
-        {on ? <SignIn /> : <SignUp />}{' '}
+        {isSignedOn ? <SignIn /> : <SignUp />}{' '}
       </div>
     );
   }

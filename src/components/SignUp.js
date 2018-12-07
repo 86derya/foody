@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   password: '',
   phone: '',
 };
-export default class SignUn extends Component {
+export default class SignUp extends Component {
   state = { ...INITIAL_STATE };
 
   reset = () => {
