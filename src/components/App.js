@@ -7,14 +7,12 @@ import DishComment from './DishComment';
 import OrderHistory from './OrderHistory';
 import Orders from '../data/order-history.json';
 
-const App = () => ( < div > < Header / > < hr / > < UserAuthorizationForm / > < hr / > < Menu dishList = {
-        DishList
-    }
-    /> < DishComment id = {
-    1
-}
-/>< hr / > < OrderHistory orders = {
-Orders
-}
-/ > </div > );
+const App = () => (
+  <div>
+    {' '}
+    <Header /> <hr /> <UserAuthorizationForm /> <hr />{' '}
+    <Menu dishList={DishList} /> <DishComment id={1} /> <hr />{' '}
+    <OrderHistory orders={Orders} />{' '}
+  </div>
+);
 export default App;

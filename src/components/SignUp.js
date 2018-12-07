@@ -6,7 +6,6 @@ const INITIAL_STATE = {
   password: '',
   phone: '',
 };
-
 export default class SignUn extends Component {
   state = { ...INITIAL_STATE };
 
@@ -16,7 +15,6 @@ export default class SignUn extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     this.reset();
   };
 
@@ -40,7 +38,7 @@ export default class SignUn extends Component {
           onChange={this.handleChange}
           value={name}
           autoComplete="off"
-        />{' '}
+        />
         <br />
         <input
           name="password"
@@ -49,7 +47,7 @@ export default class SignUn extends Component {
           onChange={this.handleChange}
           value={password}
           autoComplete="off"
-        />{' '}
+        />
         <br />
         <input
           name="email"
@@ -58,7 +56,7 @@ export default class SignUn extends Component {
           onChange={this.handleChange}
           value={email}
           autoComplete="off"
-        />{' '}
+        />
         <br />
         <input
           name="phone"
@@ -67,9 +65,8 @@ export default class SignUn extends Component {
           onChange={this.handleChange}
           value={phone}
           autoComplete="off"
-        />{' '}
-        <br />
-        <button type="submit"> Sign In </button>{' '}
+        />
+        <br /> <button type="submit"> Sign Up </button>{' '}
       </form>
     );
   }
