@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import OrderHistory from './OrderHistory';
 import Modal from './Modal';
 import ModalContent from './ModalContent';
