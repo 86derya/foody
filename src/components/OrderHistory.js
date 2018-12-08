@@ -1,24 +1,65 @@
-import React from 'react';
+import React, { Component } from 'react';
+import OrdersHistoryTable from './OrdersHistoryTable';
+import OrderDetails from './OrderDetails';
+import Modal from './Modal';
+import * as API from '../services/api';
+import Spinner from './spinner/Spinner';
 
-const OrderHistory = ({ orders }) => {
-  const row = orders.map(order => (
-    <tr key={order.id}>
-      <td> {order.date} </td> <td> {order.price} </td>{' '}
-      <td> {order.address} </td> <td> {order.rating} </td>{' '}
-    </tr>
-  ));
+export default class OrderHistory extends Component {
+  state = {
+    orders: [],
+    isModalOpen: false,
+    orderPopUp: {},
+    isLoading: false,
+  };
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th> Date </th> <th> Price </th> <th> Delivery address </th>{' '}
-          <th> Rating </th>{' '}
-        </tr>{' '}
-      </thead>{' '}
-      <tbody> {row} </tbody>{' '}
-    </table>
-  );
-};
+  componentDidMount() {
+    this.setState({
+      isLoading: true,
+    });
+    API.getAllOrders().then(orders =>
+      this.setState({
+        orders: orders.data,
+        isLoading: false,
+      }),
+    );
+  }
 
-export default OrderHistory;
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false,
+    });
+  };
+
+  handleShowDetails = id => {
+    API.getOrderById(id).then(order => {
+      this.setState({
+        orderPopUp: order,
+        isModalOpen: true,
+      });
+    });
+  };
+
+  render() {
+    const { isModalOpen, orders, orderPopUp, isLoading } = this.state;
+    return (
+      <div>
+        {' '}
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          isModalOpen && (
+            <Modal onClose={this.closeModal}>
+              {' '}
+              <OrderDetails order={orderPopUp} />{' '}
+            </Modal>
+          )
+        )}{' '}
+        <OrdersHistoryTable
+          orders={orders}
+          onShowDetails={this.handleShowDetails}
+        />{' '}
+      </div>
+    );
+  }
+}
