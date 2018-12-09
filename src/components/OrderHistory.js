@@ -32,8 +32,12 @@ export default class OrderHistory extends Component {
   };
 
   handleShowDetails = id => {
+    this.setState({
+      isLoading: true,
+    });
     API.getOrderById(id).then(order => {
       this.setState({
+        isLoading: false,
         orderPopUp: order,
         isModalOpen: true,
       });
