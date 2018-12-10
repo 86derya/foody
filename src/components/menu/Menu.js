@@ -7,28 +7,31 @@ const filterDishes = (dishes, filter) =>
 
 export default class Menu extends Component {
   state = {
-    dishes: this.props.dishList,
     filterBy: '',
   };
 
-  handleFilterChange = ({ target }) => {
+  handleFilterChange = ({ target: { value } }) => {
     this.setState({
-      filterBy: target.value,
+      filterBy: value,
     });
   };
 
   render() {
-    const { dishes, filterBy } = this.state;
-    const filteredDishes = filterDishes(dishes, filterBy);
+    const { filterBy } = this.state;
+    const { dishList } = this.props;
+    const filteredDishes = filterDishes(dishList, filterBy);
 
     return (
       <section>
-        {' '}
         <MenuFilterInput
           value={filterBy}
           onFilterByChange={this.handleFilterChange}
-        />{' '}
-        <MenuGrid dishList={filteredDishes} />{' '}
+        />
+        {filterBy ? (
+          <MenuGrid dishList={filteredDishes} />
+        ) : (
+          <MenuGrid dishList={dishList} />
+        )}
       </section>
     );
   }

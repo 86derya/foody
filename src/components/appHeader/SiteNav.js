@@ -5,15 +5,13 @@ const navList = ['Menu', 'About', 'Contact', 'Delivery'];
 const SiteNav = () => {
   const navItem = navList.map(item => (
     <li key={item}>
-      {' '}
-      <a href="/"> {item} </a>{' '}
+      <a href="/"> {item} </a>
     </li>
   ));
 
   return (
     <nav>
-      {' '}
-      <ul> {navItem} </ul>{' '}
+      <ul> {navItem} </ul>
     </nav>
   );
 };

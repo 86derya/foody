@@ -1,9 +1,8 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-// future serverDB
-import dishListServer from '../data/DishListRated';
+import dishListServer from '../../data/DishListRated';
 
 const ratingOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 const INITIAL_STATE = {
   comment: '',
   rating: 0,
@@ -11,20 +10,21 @@ const INITIAL_STATE = {
 
 export default class DishComment extends Component {
   state = {
-    id: this.props.id,
     comment: '',
     rating: 0,
   };
 
   updateCommentList = () => {
-    const { id, comment } = this.state;
+    const { id } = this.props;
+    const { comment } = this.state;
     const selectedDish = dishListServer.find(dish => dish.id === id);
     if (comment.length < 0 || !comment) return;
     dishListServer[dishListServer.indexOf(selectedDish)].comments.push(comment);
   };
 
   updateRatingList = () => {
-    const { id, rating } = this.state;
+    const { id } = this.props;
+    const { rating } = this.state;
     const selectedDish = dishListServer.find(dish => dish.id === id);
     dishListServer[dishListServer.indexOf(selectedDish)].rating.push(rating);
   };
@@ -43,10 +43,8 @@ export default class DishComment extends Component {
 
   handleFormSubmit = evt => {
     evt.preventDefault();
-
     this.updateCommentList();
     this.updateRatingList();
-
     this.reset();
   };
 
@@ -59,28 +57,22 @@ export default class DishComment extends Component {
     const { comment, rating } = this.state;
     const ratingOption = ratingOptions.map(option => (
       <option key={option} value={option}>
-        {' '}
-        {option}{' '}
+        {option}
       </option>
     ));
     const selectedDish = dishListServer.find(dish => dish.id === id);
     const { name, image, description, comments } = selectedDish;
-    const commentItem = comments.map(item => (
-      <li key={item}>
-        {' '}
-        {item} <hr />{' '}
-      </li>
-    ));
+    const commentItem = comments.map(item => <li key={item}> {item} </li>);
     return (
       <section>
-        <h2> {name} </h2> <p> {description} </p>{' '}
-        <img src={image} alt={name} width="160px" height="auto" /> <hr />{' '}
+        <h2> {name} </h2>
+        <p> {description}</p>
+        <img src={image} alt={name} width="160px" height="auto" />
         <div className="comments_wrap">
-          {' '}
-          Comments: <ul> {commentItem} </ul> <hr />{' '}
-        </div>{' '}
+          Comments:
+          <ul> {commentItem} </ul>
+        </div>
         <form>
-          {' '}
           <textarea
             onChange={this.handleTextAreaChange}
             rows="10"
@@ -88,23 +80,20 @@ export default class DishComment extends Component {
             value={comment}
             placeholder="Leave Your comment..."
           />
-          <br />{' '}
           <label>
-            {' '}
-            Rate the dish{' '}
+            Rate the dish
             <select
               name="rating"
               onChange={this.handleRatingSelect}
               value={rating}
             >
-              {' '}
-              {ratingOption}{' '}
-            </select>{' '}
-          </label>{' '}
+              {ratingOption}
+            </select>
+          </label>
           <button type="submit" onClick={this.handleFormSubmit}>
-            Сохранить{' '}
-          </button>{' '}
-        </form>{' '}
+            Сохранить
+          </button>
+        </form>
       </section>
     );
   }

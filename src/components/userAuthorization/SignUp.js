@@ -19,7 +19,6 @@ export default class SignUp extends Component {
   };
 
   handleChange = e => {
-    e.preventDefault();
     const { value } = e.target;
     const { name } = e.target;
     this.setState({
@@ -39,7 +38,6 @@ export default class SignUp extends Component {
           value={name}
           autoComplete="off"
         />
-        <br />
         <input
           name="password"
           type="password"
@@ -48,7 +46,6 @@ export default class SignUp extends Component {
           value={password}
           autoComplete="off"
         />
-        <br />
         <input
           name="email"
           type="email"
@@ -57,7 +54,6 @@ export default class SignUp extends Component {
           value={email}
           autoComplete="off"
         />
-        <br />
         <input
           name="phone"
           type="tel"
@@ -66,7 +62,7 @@ export default class SignUp extends Component {
           value={phone}
           autoComplete="off"
         />
-        <br /> <button type="submit"> Sign Up </button>{' '}
+        <button type="submit"> Sign Up </button>
       </form>
     );
   }

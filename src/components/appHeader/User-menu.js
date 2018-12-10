@@ -8,8 +8,7 @@ const UserMenu = ({ user }) => {
 
   return (
     <div key={user.id}>
-      {' '}
-      {userAvatar} {userName}{' '}
+      {userAvatar} {userName}
     </div>
   );
 };

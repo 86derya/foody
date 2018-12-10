@@ -38,8 +38,7 @@ export default class SignIn extends Component {
           onChange={this.handleChange}
           value={email}
           autoComplete="off"
-        />{' '}
-        <br />
+        />
         <input
           name="password"
           type="password"
@@ -47,9 +46,8 @@ export default class SignIn extends Component {
           onChange={this.handleChange}
           value={password}
           autoComplete="off"
-        />{' '}
-        <br />
-        <button type="submit"> Sign In </button>{' '}
+        />
+        <button type="submit"> Sign In </button>
       </form>
     );
   }
