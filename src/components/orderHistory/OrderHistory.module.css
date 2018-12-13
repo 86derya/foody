@@ -1,0 +1,26 @@
+.order_history {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  background-color: rgb(125, 211, 139);
+}
+
+th,
+td {
+  padding: 2px;
+  text-align: center;
+  border: 1px solid black;
+}
+table {
+  display: block;
+  margin: 0 auto;
+}
+
+th {
+  height: 50px;
+  min-width: 250px;
+  background-color: cornflowerblue;
+}
+tr {
+  width: 100%;
+}

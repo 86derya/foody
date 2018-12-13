@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styles from './Authorization.module.css';
+import SignInConfig from './SignInConfig';
 
 const INITIAL_STATE = {
   email: '',
@@ -18,35 +20,31 @@ export default class SignIn extends Component {
   };
 
   handleChange = e => {
-    e.preventDefault();
-    const { value } = e.target;
-    const { name } = e.target;
+    const { value, name } = e.target;
     this.setState({
       [name]: value,
     });
   };
 
   render() {
-    const { email, password } = this.state;
+    const input = SignInConfig.map(el => (
+      <input
+        key={el.name}
+        className={styles.input}
+        onChange={this.handleChange}
+        name={el.name}
+        type={el.type}
+        value={this.state[el.name]}
+        autoComplete={el.autoComplete}
+        placeholder={el.placeholder}
+      />
+    ));
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          name="email"
-          type="email"
-          placeholder="Email..."
-          onChange={this.handleChange}
-          value={email}
-          autoComplete="off"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password..."
-          onChange={this.handleChange}
-          value={password}
-          autoComplete="off"
-        />
-        <button type="submit"> Sign In </button>
+      <form className={styles.auth_form} onSubmit={this.handleSubmit}>
+        {input}
+        <button className={styles.button} type="submit">
+          Submit
+        </button>
       </form>
     );
   }

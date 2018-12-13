@@ -1,14 +1,16 @@
 import React from 'react';
+import styles from './AppHeader.module.css';
 
 const UserMenu = ({ user }) => {
   const userAvatar = (
-    <img src={user.avatar} alt="avatar" width="34 px" height="34 px" />
+    <img className={styles.user_avatar} src={user.avatar} alt="avatar" />
   );
-  const userName = <span> {user.name} </span>;
+  const userName = <span className={styles.user_name}>{user.name}</span>;
 
   return (
-    <div key={user.id}>
-      {userAvatar} {userName}
+    <div className={styles.user_menu__container} key={user.id}>
+      {userAvatar}
+      {userName}
     </div>
   );
 };

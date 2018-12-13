@@ -1,27 +1,27 @@
 import React from 'react';
+import styles from './OrderHistory.module.css';
+import tbodyCells from './TableConfig';
 
 const OrderHistory = ({ orders }) => {
-  const row = orders.map(order => (
-    <tr key={order.id}>
-      <td> {order.date} </td>
-      <td> {order.price} </td>
-      <td> {order.address} </td>
-      <td> {order.rating} </td>
+  const th = tbodyCells.map(cell => <th key={cell}>{cell}</th>);
+  const row = orders.map(({ id, date, price, address, rating }) => (
+    <tr className={styles.tbody_row} key={id}>
+      <td> {date} </td>
+      <td> {price} </td>
+      <td> {address} </td>
+      <td> {rating} </td>
     </tr>
   ));
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th> Date </th>
-          <th> Price </th>
-          <th> Delivery address </th>
-          <th> Rating </th>
-        </tr>
-      </thead>
-      <tbody>{row}</tbody>
-    </table>
+    <section className={styles.order_history}>
+      <table>
+        <thead>
+          <tr>{th}</tr>
+        </thead>
+        <tbody>{row}</tbody>
+      </table>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import UserAuthorizationForm from './userAuthorization/UserAuthorization';
 import Menu from './menu/Menu';
 import Header from './appHeader/App-Header';
@@ -7,13 +7,21 @@ import DishComment from './dishComments/DishComment';
 import OrderHistory from './orderHistory/OrderHistory';
 import Orders from '../data/order-history.json';
 
-const App = () => (
-  <div>
-    <Header />
-    <UserAuthorizationForm />
-    <Menu dishList={DishList} />
-    <DishComment id={1} />
-    <OrderHistory orders={Orders} />
-  </div>
-);
-export default App;
+export default class App extends Component {
+  state = {
+    id: 5,
+  };
+
+  render() {
+    const { id } = this.state;
+    return (
+      <div>
+        <Header />
+        <UserAuthorizationForm />
+        <Menu dishList={DishList} />
+        <DishComment id={id} />
+        <OrderHistory orders={Orders} />
+      </div>
+    );
+  }
+}

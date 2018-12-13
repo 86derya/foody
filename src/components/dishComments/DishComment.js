@@ -1,50 +1,57 @@
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import dishListServer from '../../data/DishListRated';
+import styles from './DishComment.module.css';
+import DishList from '../../data/DishList';
 
+const v4 = require('uuid/v4');
+
+console.log(v4());
 const ratingOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const DishListRated = DishList.map(dish => ({
+  id: dish.id,
+  name: dish.name,
+  image: dish.image,
+  description: dish.description,
+  price: dish.price,
+  ingredients: dish.ingredients,
+  comments: [],
+}));
+let commentToSubmit = {};
+
 const INITIAL_STATE = {
-  comment: '',
-  rating: 0,
+  commentText: '',
+  commentRating: '-',
 };
 
 export default class DishComment extends Component {
-  state = {
-    comment: '',
-    rating: 0,
-  };
+  state = { ...INITIAL_STATE };
 
   updateCommentList = () => {
-    const { id } = this.props;
-    const { comment } = this.state;
-    const selectedDish = dishListServer.find(dish => dish.id === id);
-    if (comment.length < 0 || !comment) return;
-    dishListServer[dishListServer.indexOf(selectedDish)].comments.push(comment);
+    const { commentText, commentRating } = this.state;
+    if (commentText.length > 0 || commentRating > 0) {
+      commentToSubmit.id = v4();
+      commentToSubmit = { ...this.state };
+      const { id } = this.props;
+
+      DishListRated.find(dish => dish.id === id).comments.push(commentToSubmit);
+    }
   };
 
-  updateRatingList = () => {
-    const { id } = this.props;
-    const { rating } = this.state;
-    const selectedDish = dishListServer.find(dish => dish.id === id);
-    dishListServer[dishListServer.indexOf(selectedDish)].rating.push(rating);
-  };
-
-  handleTextAreaChange = ({ target }) => {
+  handleTextAreaChange = ({ target: { value } }) => {
     this.setState({
-      comment: target.value,
+      commentText: value,
     });
   };
 
-  handleRatingSelect = ({ target }) => {
+  handleRatingSelect = ({ target: { value } }) => {
     this.setState({
-      rating: Math.round(target.value),
+      commentRating: Math.round(value),
     });
   };
 
   handleFormSubmit = evt => {
     evt.preventDefault();
     this.updateCommentList();
-    this.updateRatingList();
     this.reset();
   };
 
@@ -54,46 +61,60 @@ export default class DishComment extends Component {
 
   render() {
     const { id } = this.props;
-    const { comment, rating } = this.state;
+    const { commentText, commentRating } = this.state;
     const ratingOption = ratingOptions.map(option => (
       <option key={option} value={option}>
         {option}
       </option>
     ));
-    const selectedDish = dishListServer.find(dish => dish.id === id);
-    const { name, image, description, comments } = selectedDish;
-    const commentItem = comments.map(item => <li key={item}> {item} </li>);
+    const selectedDish = DishListRated.find(dish => dish.id === id);
+    const { name, image, description, comments, price } = selectedDish;
+    const commentItem = comments.map(item => (
+      <li className={styles.comments__item} key={item.id}>
+        <p className={styles.comment__text}>{item.commentText}</p>
+        <p className={styles.comment__rating}>Rated: {item.commentRating}</p>
+      </li>
+    ));
     return (
-      <section>
-        <h2> {name} </h2>
-        <p> {description}</p>
-        <img src={image} alt={name} width="160px" height="auto" />
-        <div className="comments_wrap">
-          Comments:
-          <ul> {commentItem} </ul>
+      <section className={styles.dish_page}>
+        <div className={styles.container}>
+          <div className={styles.dish_details}>
+            <img className={styles.dish__image} src={image} alt={name} />
+            <h2 className={styles.dish__name}> {name} </h2>
+            <p className={styles.dish__description}> {description}</p>
+            <p className={styles.dish__price}>Price: {price} $</p>
+          </div>
+          <div className={styles.dish__user_feeddback}>
+            Comments:
+            <ul className={styles.comments_list}> {commentItem} </ul>
+            <form>
+              <textarea
+                className={styles.comments__input_text}
+                onChange={this.handleTextAreaChange}
+                value={commentText}
+                placeholder="Leave Your comment..."
+              />
+              <label>
+                Rate the dish
+                <select
+                  className={styles.comments__rating_select}
+                  name="rating"
+                  onChange={this.handleRatingSelect}
+                  value={commentRating}
+                >
+                  {ratingOption}
+                </select>
+              </label>
+              <button
+                className={styles.button}
+                type="submit"
+                onClick={this.handleFormSubmit}
+              >
+                Leave comment
+              </button>
+            </form>
+          </div>
         </div>
-        <form>
-          <textarea
-            onChange={this.handleTextAreaChange}
-            rows="10"
-            cols="80"
-            value={comment}
-            placeholder="Leave Your comment..."
-          />
-          <label>
-            Rate the dish
-            <select
-              name="rating"
-              onChange={this.handleRatingSelect}
-              value={rating}
-            >
-              {ratingOption}
-            </select>
-          </label>
-          <button type="submit" onClick={this.handleFormSubmit}>
-            Сохранить
-          </button>
-        </form>
       </section>
     );
   }

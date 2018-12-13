@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './MenuGrid.module.css';
 import MenuGrid from './MenuGrid';
 import MenuFilterInput from './MenuFilterInput';
 
@@ -22,16 +23,18 @@ export default class Menu extends Component {
     const filteredDishes = filterDishes(dishList, filterBy);
 
     return (
-      <section>
-        <MenuFilterInput
-          value={filterBy}
-          onFilterByChange={this.handleFilterChange}
-        />
-        {filterBy ? (
-          <MenuGrid dishList={filteredDishes} />
-        ) : (
-          <MenuGrid dishList={dishList} />
-        )}
+      <section className={styles.menu}>
+        <div className={styles.container}>
+          <MenuFilterInput
+            value={filterBy}
+            onFilterByChange={this.handleFilterChange}
+          />
+          {filterBy ? (
+            <MenuGrid dishList={filteredDishes} />
+          ) : (
+            <MenuGrid dishList={dishList} />
+          )}
+        </div>
       </section>
     );
   }

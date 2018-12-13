@@ -1,0 +1,26 @@
+[
+  {
+    "name": "name",
+    "type": "name",
+    "placeholder": "Your Name...",
+    "autoComplete": "off"
+  },
+  {
+    "name": "password",
+    "type": "password",
+    "placeholder": "Password...",
+    "autoComplete": "off"
+  },
+  {
+    "name": "email",
+    "type": "email",
+    "placeholder": "Email...",
+    "autoComplete": "off"
+  },
+  {
+    "name": "phone",
+    "type": "tel",
+    "placeholder": "Phone Number...",
+    "autoComplete": "off"
+  }
+]

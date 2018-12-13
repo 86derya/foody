@@ -1,0 +1,14 @@
+[
+  {
+    "name": "email",
+    "type": "email",
+    "placeholder": "Email...",
+    "autoComplete": "off"
+  },
+  {
+    "name": "password",
+    "type": "password",
+    "placeholder": "Password...",
+    "autoComplete": "off"
+  }
+]

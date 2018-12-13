@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import styles from './Authorization.module.css';
+import SignUpConfig from './SignUpConfig';
 
 const INITIAL_STATE = {
   name: '',
@@ -19,50 +21,31 @@ export default class SignUp extends Component {
   };
 
   handleChange = e => {
-    const { value } = e.target;
-    const { name } = e.target;
+    const { value, name } = e.target;
     this.setState({
       [name]: value,
     });
   };
 
   render() {
-    const { email, password, name, phone } = this.state;
+    const input = SignUpConfig.map(el => (
+      <input
+        key={el.name}
+        className={styles.input}
+        onChange={this.handleChange}
+        name={el.name}
+        type={el.type}
+        value={this.state[el.name]}
+        autoComplete={el.autoComplete}
+        placeholder={el.placeholder}
+      />
+    ));
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          name="name"
-          type="text"
-          placeholder="Your Name..."
-          onChange={this.handleChange}
-          value={name}
-          autoComplete="off"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="Password..."
-          onChange={this.handleChange}
-          value={password}
-          autoComplete="off"
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="Email..."
-          onChange={this.handleChange}
-          value={email}
-          autoComplete="off"
-        />
-        <input
-          name="phone"
-          type="tel"
-          placeholder="Phone Number..."
-          onChange={this.handleChange}
-          value={phone}
-          autoComplete="off"
-        />
-        <button type="submit"> Sign Up </button>
+      <form className={styles.auth_form} onSubmit={this.handleSubmit}>
+        {input}
+        <button className={styles.button} type="submit">
+          Submit
+        </button>
       </form>
     );
   }

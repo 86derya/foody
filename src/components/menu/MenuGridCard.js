@@ -1,12 +1,15 @@
 import React, { Fragment } from 'react';
+import styles from './MenuGrid.module.css';
 
 const MenuGridCard = ({ name, image, price, description }) => {
   const dishImg = (
-    <img src={image} alt="dish_photo" width="160px" height="auto" />
+    <img className={styles.menu_card_image} src={image} alt="dish_photo" />
   );
-  const dishName = <h3> {name} </h3>;
-  const dishPrice = <p>{price}грн.</p>;
-  const dishDescr = <p> {description} </p>;
+  const dishName = <p className={styles.menu_card_title}> {name} </p>;
+  const dishPrice = <p className={styles.menu_card_price}>Price: {price} $</p>;
+  const dishDescr = (
+    <p className={styles.menu_card_description}> {description} </p>
+  );
 
   return (
     <Fragment>

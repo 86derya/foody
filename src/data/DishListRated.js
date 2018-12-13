@@ -7,7 +7,6 @@ const DishRated = DishList.map(dish => ({
   description: dish.description,
   price: dish.price,
   ingredients: dish.ingredients,
-  rating: [],
   comments: [],
 }));
 
