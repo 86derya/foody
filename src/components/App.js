@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import UserAuthorizationForm from './userAuthorization/UserAuthorization';
-import Menu from './menu/Menu';
-import Header from './appHeader/App-Header';
+import UserAuthorizationForm from './userAuthorization';
+import Menu from './menu';
+import Header from './appHeader';
 import DishList from '../data/DishList.json';
-import DishComment from './dishComments/DishComment';
-import OrderHistory from './orderHistory/OrderHistory';
+import DishComment from './dishComments';
+import OrderHistory from './orderHistory';
 import Orders from '../data/order-history.json';
 
 export default class App extends Component {

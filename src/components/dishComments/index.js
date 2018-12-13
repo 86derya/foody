@@ -4,7 +4,6 @@ import DishList from '../../data/DishList';
 
 const v4 = require('uuid/v4');
 
-console.log(v4());
 const ratingOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const DishListRated = DishList.map(dish => ({
