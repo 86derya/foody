@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import OrderHistory from './OrderHistory';
-import Modal from './Modal';
-import ModalContent from './ModalContent';
+import OrderHistory from './orderHistory';
+import Modal from './modal/Modal';
+import ModalContent from './modal/ModalContent';
+
+import styles from './index.module.css';
 
 export default class App extends Component {
   state = {
@@ -22,20 +24,25 @@ export default class App extends Component {
 
   render() {
     const { isModalOpen } = this.state;
+    const ShowModalBtn = () => (
+      <button
+        className={styles.button}
+        type="button"
+        onClick={this.handleOpenModal}
+      >
+        Show Modal
+      </button>
+    );
+
     return (
       <div>
-        {' '}
         {isModalOpen && (
           <Modal onClose={this.closeModal}>
-            {' '}
-            <ModalContent />{' '}
+            <ModalContent />
           </Modal>
-        )}{' '}
-        <button type="button" onClick={this.handleOpenModal}>
-          {' '}
-          Show Modal{' '}
-        </button>{' '}
-        <OrderHistory />{' '}
+        )}
+        <ShowModalBtn />
+        <OrderHistory />
       </div>
     );
   }

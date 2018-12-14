@@ -1,0 +1,52 @@
+.order_history {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  background-color: rgb(125, 211, 139);
+}
+
+th {
+  padding: 2px;
+  text-align: center;
+  border: 1px solid black;
+}
+td {
+  padding: 2px;
+  text-align: center;
+  border: 1px solid black;
+}
+table {
+  display: block;
+  margin: 0 auto;
+}
+
+th {
+  height: 50px;
+  min-width: 250px;
+  background-color: cornflowerblue;
+}
+tr {
+  width: 100%;
+}
+.btn_cell {
+  border: none;
+}
+
+.button {
+  background: white;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.order__details_container {
+  min-width: 360px;
+}
+.order__details_list {
+  list-style: none;
+}
+/* .order__details_item {
+} */
+p {
+  color: gray;
+}

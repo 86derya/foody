@@ -1,24 +1,6 @@
 import React, { Component, createRef } from 'react';
+import styles from './Modal.module.css';
 
-const styles = {
-  backdrop: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modal: {
-    maxWidth: 600,
-    minHeight: 300,
-    backgroundColor: '#fff',
-    padding: 16,
-  },
-};
 export default class Modal extends Component {
   containerRef = createRef();
 
@@ -47,16 +29,17 @@ export default class Modal extends Component {
 
   render() {
     const { onClose, children } = this.props;
-
+    const CloseModalBtn = () => (
+      <button className={styles.button} type="button" onClick={onClose}>
+        Close
+      </button>
+    );
     return (
-      <div style={styles.backdrop} ref={this.containerRef}>
-        <div style={styles.modal}>
-          {' '}
-          <div> {children} </div>{' '}
-          <button type="button" onClick={onClose}>
-            Close{' '}
-          </button>{' '}
-        </div>{' '}
+      <div className={styles.backdrop} ref={this.containerRef}>
+        <div className={styles.modal}>
+          <div> {children} </div>
+          <CloseModalBtn />
+        </div>
       </div>
     );
   }
