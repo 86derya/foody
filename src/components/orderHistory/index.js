@@ -121,7 +121,7 @@ export default class OrderHistory extends Component {
       </button>
     );
     return (
-      <section>
+      <div className={styles.order_table}>
         {isLoading ? (
           <Spinner />
         ) : (
@@ -140,7 +140,7 @@ export default class OrderHistory extends Component {
           onShowDetails={this.handleShowDetails}
           onDelete={this.handleDelete}
         />
-      </section>
+      </div>
     );
   }
 }

@@ -35,7 +35,7 @@ export default class App extends Component {
     );
 
     return (
-      <div>
+      <section className={styles.order_history}>
         {isModalOpen && (
           <Modal onClose={this.closeModal}>
             <ModalContent />
@@ -43,7 +43,7 @@ export default class App extends Component {
         )}
         <ShowModalBtn />
         <OrderHistory />
-      </div>
+      </section>
     );
   }
 }

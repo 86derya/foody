@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../OrderHistory.module.css';
 import tbodyCells from './TableConfig';
 
-const OrderHistory = ({ orders, onShowDetails, onDelete }) => {
+const OrderHistoryTable = ({ orders, onShowDetails, onDelete }) => {
   const ShowMoreBtn = id => (
     <button
       className={styles.button}
@@ -42,15 +42,15 @@ const OrderHistory = ({ orders, onShowDetails, onDelete }) => {
   ));
 
   return (
-    <section className={styles.order_history}>
+    <div className={styles.order_table}>
       <table>
         <thead>
           <tr>{th}</tr>
         </thead>
         <tbody>{row}</tbody>
       </table>
-    </section>
+    </div>
   );
 };
 
-export default OrderHistory;
+export default OrderHistoryTable;
