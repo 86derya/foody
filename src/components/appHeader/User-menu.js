@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './AppHeader.module.css';
+import users from '../../data/users.json';
 
-const UserMenu = ({ user }) => {
+const UserMenu = () => {
+  const user = users[0];
   const userAvatar = (
     <img className={styles.user_avatar} src={user.avatar} alt="avatar" />
   );

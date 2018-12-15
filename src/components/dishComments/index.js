@@ -23,6 +23,10 @@ const INITIAL_STATE = {
 };
 
 export default class DishComment extends Component {
+  static defaultProps = {
+    id: 6,
+  };
+
   state = { ...INITIAL_STATE };
 
   updateCommentList = () => {

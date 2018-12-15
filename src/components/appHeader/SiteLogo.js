@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Logo from '../../data/logo.png';
 import styles from './AppHeader.module.css';
 
-const SiteLogo = ({ logo }) => {
-  const image = <img className={styles.site_logo} src={logo} alt="logo" />;
-  return <Fragment> {image} </Fragment>;
-};
+const SiteLogo = () => (
+  <img className={styles.site_logo} src={Logo} alt="logo" />
+);
 export default SiteLogo;
