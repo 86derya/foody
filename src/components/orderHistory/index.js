@@ -134,12 +134,12 @@ export default class OrderHistory extends Component {
             </Modal>
           )
         )}
-        <AddNewOrderBtn />
         <OrdersHistoryTable
           orders={orders}
           onShowDetails={this.handleShowDetails}
           onDelete={this.handleDelete}
         />
+        <AddNewOrderBtn />
       </div>
     );
   }
