@@ -22,18 +22,25 @@
       "rating": 6
     },
     {
-      "address": "btrbtrbtrbrt",
-      "rating": "tttt",
-      "price": "rtrtr",
-      "date": "12/15/2018",
+      "address": "khmelnitskogo, 19",
+      "rating": "6",
+      "price": "120.00",
+      "date": "12/17/2018",
       "id": 5
     },
     {
-      "address": "vdf",
-      "rating": "dv",
-      "price": "vdvdv",
-      "date": "12/15/2018",
+      "address": "Al Ittihad Rd,Sheikh Khalifa Bin Zayed St",
+      "rating": "8",
+      "price": "57",
+      "date": "12/17/2018",
       "id": 6
+    },
+    {
+      "address": "thrhrthtrh",
+      "rating": "5",
+      "price": "2345",
+      "date": "12/17/2018",
+      "id": 7
     }
   ]
 }

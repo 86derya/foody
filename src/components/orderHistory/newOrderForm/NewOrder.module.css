@@ -21,7 +21,7 @@ form {
   flex-wrap: wrap;
   width: 450px;
 }
-label {
+.label {
   display: flex;
   justify-content: space-between;
   align-items: center;

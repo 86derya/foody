@@ -1,9 +1,7 @@
-/* .order_history {
-  display: flex;
+.order_history {
   padding: 20px;
-  justify-content: center;
-  background-color: rgb(125, 211, 139);
-} */
+  background-color: rgb(46, 185, 104);
+}
 
 th {
   padding: 2px;
@@ -52,4 +50,13 @@ tr {
 } */
 p {
   color: gray;
+}
+.add_new_order_button {
+  display: block;
+  margin: 10px auto 0;
+  background: rgb(184, 243, 216);
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }

@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import Header from './appHeader';
+import UserAuthorizationForm from './userAuthorization';
+import Menu from './menu';
+import DishList from '../data/DishList.json';
+import DishComment from './dishComments';
 import OrderHistory from './orderHistory';
 import Modal from './modal/Modal';
 import ModalContent from './modal/ModalContent';
@@ -35,13 +40,17 @@ export default class App extends Component {
     );
 
     return (
-      <section className={styles.order_history}>
+      <section>
         {isModalOpen && (
           <Modal onClose={this.closeModal}>
             <ModalContent />
           </Modal>
         )}
         <ShowModalBtn />
+        <Header />
+        <UserAuthorizationForm />
+        <Menu dishList={DishList} />
+        <DishComment />
         <OrderHistory />
       </section>
     );

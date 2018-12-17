@@ -1,0 +1,61 @@
+.header {
+  margin: 0 auto;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(165, 235, 165);
+
+  box-shadow: 0 4px 8px 0 rgba(18, 58, 8, 0.2),
+    0 6px 20px 0 rgba(6, 53, 9, 0.19);
+}
+.site_logo {
+  width: 90px;
+  height: 90px;
+}
+.navigation_container {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+.navigation_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.navigation_item {
+  list-style: none;
+  padding: 4px 20px;
+}
+.navigation_link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(60, 63, 71);
+  font-size: 18px;
+  font-weight: bold;
+}
+.navigation_link:hover {
+  color: rgb(156, 104, 6);
+}
+.user_menu__container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.user_avatar {
+  margin: 0;
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+}
+.user_name {
+  text-transform: uppercase;
+  color: rgb(6, 58, 161);
+  font-size: 14px;
+}

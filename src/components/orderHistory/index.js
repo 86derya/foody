@@ -113,7 +113,7 @@ export default class OrderHistory extends Component {
 
     const AddNewOrderBtn = () => (
       <button
-        className={styles.button}
+        className={styles.add_new_order_button}
         type="button"
         onClick={this.handleShowNewOrderForm}
       >
@@ -121,7 +121,7 @@ export default class OrderHistory extends Component {
       </button>
     );
     return (
-      <div className={styles.order_table}>
+      <div className={styles.order_history}>
         {isLoading ? (
           <Spinner />
         ) : (

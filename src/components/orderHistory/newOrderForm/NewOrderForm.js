@@ -39,7 +39,7 @@ export default class NewOrderForm extends Component {
     );
 
     const input = NewOrderFormConfig.map(el => (
-      <label key={el.name}>
+      <label className={styles.label} key={el.name}>
         {el.name}:
         <input
           key={el.name}
