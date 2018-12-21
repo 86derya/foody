@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import styles from './Authorization.module.css';
-import SignUpConfig from './SignUpConfig';
+import SignUpConfig from '../../configs/SignUpConfig.json';
 
 const INITIAL_STATE = {
   name: '',

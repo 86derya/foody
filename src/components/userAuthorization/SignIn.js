@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import styles from './Authorization.module.css';
-import SignInConfig from './SignInConfig';
+import SignInConfig from '../../configs/SignInConfig.json';
 
 const INITIAL_STATE = {
   email: '',

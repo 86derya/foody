@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './AppHeader.module.css';
-
-const navList = ['Menu', 'About', 'Contact', 'Delivery'];
+import navList from '../../configs/mainNavConfig';
 
 const SiteNav = () => {
   const navItem = navList.map(item => (

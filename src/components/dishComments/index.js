@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import styles from './DishComment.module.css';
 import DishList from '../../data/DishList';
+import ratingOptions from '../../configs/ratingOptions';
 
 const v4 = require('uuid/v4');
-
-const ratingOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const DishListRated = DishList.map(dish => ({
   id: dish.id,
