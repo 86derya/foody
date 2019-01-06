@@ -1,6 +1,7 @@
 .dish_page {
   display: block;
   margin: 0 auto;
+  height: 100vh;
   padding: 20px;
   background-color: rgba(143, 235, 212, 0.959);
 }
@@ -20,6 +21,12 @@ p {
   padding: 20px;
   width: 50%;
   background-color: rgba(221, 235, 143, 0.959);
+}
+.dish__ingredients_list {
+  display: block;
+}
+.dish__ingredients_item {
+  display: block;
 }
 .dish__image {
   width: 200px;
@@ -76,4 +83,22 @@ p {
   align-items: center;
   width: 100%;
   cursor: pointer;
+}
+.goBackBtn {
+  display: block;
+  padding: 0;
+  position: fixed;
+  top: 120px;
+  left: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+.goBackBtn:hover {
+  transform: scale(1.1);
+}
+.goBackBtn img {
+  display: block;
+  padding: 0;
+  height: 40px;
 }

@@ -1,13 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import styles from './AppHeader.module.css';
 import navList from '../../configs/mainNavConfig';
 
 const SiteNav = () => {
   const navItem = navList.map(item => (
-    <li className={styles.navigation_item} key={item}>
-      <a className={styles.navigation_link} href="/">
-        {item}
-      </a>
+    <li className={styles.navigation_item} key={item.name}>
+      <NavLink
+        to={item.path}
+        className={styles.navigation_link}
+        activeClassName={styles.navigation_alink}
+      >
+        {item.name}
+      </NavLink>
     </li>
   ));
 

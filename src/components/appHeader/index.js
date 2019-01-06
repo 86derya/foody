@@ -1,7 +1,7 @@
 import React from 'react';
 import SiteLogo from './SiteLogo';
 import SiteNav from './SiteNav';
-import UserMenu from './User-menu';
+import UserMenu from './userMenu/User-menu';
 
 import styles from './AppHeader.module.css';
 

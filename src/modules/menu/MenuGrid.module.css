@@ -72,3 +72,27 @@
   margin: 0;
   padding: 0;
 }
+.addDish__link {
+  display: block;
+  margin-bottom: 10px;
+}
+.select {
+  margin: 20px 0;
+  width: 416px;
+}
+.selectedCategory__descr {
+  display: inline-block;
+  margin-left: 10px;
+}
+.selectedCategory__descr span {
+  text-transform: uppercase;
+  color: purple;
+}
+.button__clearFilter {
+  color: rgb(236, 6, 6);
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}

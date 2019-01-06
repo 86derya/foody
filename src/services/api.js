@@ -35,3 +35,7 @@ const addOrder = ({ address, price, rating, date }) =>
     });
 
 export { BASE_URL, getAllOrders, getOrderById, deleteOrderById, addOrder };
+export const getMenuItemById = async id => {
+  const response = await axios.get(`/menu/${id}`);
+  return response;
+};

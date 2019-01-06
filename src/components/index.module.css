@@ -14,3 +14,7 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.menuPage__link {
+  padding: 0 10px;
+}

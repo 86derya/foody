@@ -1,0 +1,42 @@
+.container {
+  padding: 10px;
+  position: absolute;
+  top: 90px;
+  background-color: rgb(165, 235, 165);
+  box-shadow: 0 4px 8px 0 rgba(18, 58, 8, 0.2),
+    0 6px 20px 0 rgba(6, 53, 9, 0.19);
+}
+.user_menu__container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.user_avatar {
+  margin: 0;
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.user_name {
+  text-transform: uppercase;
+  color: rgb(6, 58, 161);
+  font-size: 14px;
+}
+.userMenu__list {
+  margin: 0 auto 10px;
+  padding: 0;
+  list-style: none;
+}
+.userMenu__item {
+  display: block;
+  padding: 10px;
+}
+.userMenu__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 25px;
+}
