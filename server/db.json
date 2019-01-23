@@ -39,7 +39,13 @@
       "image": "https://s1.eda.ru/StaticContent/Photos/121114213720/151024152626/p_O.png",
       "price": 100,
       "category": "soup",
-      "ingredients": ["Тыква", "Петрушка", "Сливки", "Бренди", "Куриный бульон"]
+      "ingredients": [
+        "Тыква",
+        "Петрушка",
+        "Сливки",
+        "Бренди",
+        "Куриный бульон"
+      ]
     },
     {
       "id": 4,
@@ -126,9 +132,51 @@
       "price": "dfgfdgfg",
       "image": "sfgsfg",
       "description": "fgf",
-      "ingredients": ["Грибы шиитаке", "Ванильный экстракт"],
+      "ingredients": [
+        "Грибы шиитаке",
+        "Ванильный экстракт"
+      ],
       "category": "soup",
       "id": 9
+    },
+    {
+      "name": "ewcwecewccwecwec",
+      "price": "",
+      "image": "https://i.pinimg.com/236x/1c/b7/b8/1cb7b80c4fdd50198e37daf299f09eca.jpg",
+      "description": "breb",
+      "ingredients": [
+        "бредятина",
+        "csdvdsvdsv"
+      ],
+      "category": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "price": "",
+      "image": "",
+      "description": "",
+      "ingredients": [],
+      "category": "",
+      "id": 11
+    },
+    {
+      "name": "vearver",
+      "price": "rvv",
+      "image": "",
+      "description": "",
+      "ingredients": [],
+      "category": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "price": "",
+      "image": "",
+      "description": "",
+      "ingredients": [],
+      "category": "",
+      "id": 13
     }
   ],
   "categories": [

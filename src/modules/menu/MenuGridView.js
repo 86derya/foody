@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MenuGrid.module.css';
 import MenuGridCard from './MenuGridCardView';
-// import routes from '../../configs/routes';
 
 const MenuGrid = ({ dishList, match, location }) => {
   const MenuGridItem = dishList.map(({ id, name, price, image }) => (

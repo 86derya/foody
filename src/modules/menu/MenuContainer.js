@@ -7,7 +7,7 @@ import styles from './MenuGrid.module.css';
 import MenuGrid from './MenuGridView';
 import MenuFilterInput from './MenuFilterInputView';
 import * as API from '../../services/apiMenu';
-import Spinner from '../../components/spinner/Spinner';
+import Spinner from '../../components/spinner';
 
 const filterDishes = (dishes, filter) =>
   dishes.filter(dish => dish.name.toLowerCase().includes(filter.toLowerCase()));

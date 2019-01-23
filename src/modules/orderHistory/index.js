@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import OrdersHistoryTable from './orderTable/OrdersHistoryTable';
 import NewOrderForm from './newOrderForm/NewOrderForm';
 import OrderDetailsTemplate from './orderTable/ModalOrderDetailsTemplate';
-import Modal from '../modal/Modal';
+import Modal from '../../components/modal';
 import styles from './OrderHistory.module.css';
 import * as API from '../../services/api';
-import Spinner from '../spinner/Spinner';
+import Spinner from '../../components/spinner';
 
 export default class OrderHistory extends Component {
   state = {
