@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import OrdersHistoryTable from '../modules/orderHistory/orderTable/OrdersHistoryTable';
-import NewOrderForm from '../modules/orderHistory/newOrderForm/NewOrderForm';
-import OrderDetailsTemplate from '../modules/orderHistory/orderTable/ModalOrderDetailsTemplate';
+import OrdersHistoryTable from '../components/modules/orderHistory/orderTable/OrdersHistoryTable';
+import NewOrderForm from '../components/modules/orderHistory/newOrderForm/NewOrderForm';
+import OrderDetailsTemplate from '../components/modules/orderHistory/orderTable/ModalOrderDetailsTemplate';
 import Modal from '../components/modal';
-import styles from '../modules/orderHistory/OrderHistory.module.css';
+import styles from '../components/modules/orderHistory/OrderHistory.module.css';
 import * as API from '../services/api';
 import Spinner from '../components/spinner';
 

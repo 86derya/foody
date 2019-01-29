@@ -1,7 +1,9 @@
 .container {
+  margin-right: 100px;
   padding: 10px;
   position: absolute;
-  top: 90px;
+  top: 50px;
+  width: 200px;
   background-color: rgb(165, 235, 165);
   box-shadow: 0 4px 8px 0 rgba(18, 58, 8, 0.2),
     0 6px 20px 0 rgba(6, 53, 9, 0.19);
@@ -10,9 +12,12 @@
   display: flex;
   margin: 0;
   padding: 0;
+  position: relative;
+  right: 100px;
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
+  z-index: 900;
 }
 .user_avatar {
   margin: 0;
@@ -27,7 +32,7 @@
   font-size: 14px;
 }
 .userMenu__list {
-  margin: 0 auto 10px;
+  margin: 0 auto;
   padding: 0;
   list-style: none;
 }
@@ -38,5 +43,5 @@
 .userMenu__link {
   text-decoration: none;
   text-transform: uppercase;
-  line-height: 25px;
+  line-height: 15px;
 }

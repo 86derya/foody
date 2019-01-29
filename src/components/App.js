@@ -4,6 +4,7 @@ import Spinner from './spinner';
 
 import Header from './appHeader';
 import routes from '../configs/routes';
+import Cart from './modules/cart';
 
 const AsyncMenuPage = lazy(() =>
   import('../pages/Menu' /* webpackChunkName: "Menu-page" */),
@@ -34,6 +35,9 @@ const AsyncPlannerPage = lazy(() =>
 );
 const AsyncNotFoundPage = lazy(() =>
   import('../pages/NotFound' /* webpackChunkName: "NotFound-page" */),
+);
+const AsyncCartPage = lazy(() =>
+  import('../pages/Cart' /* webpackChunkName: "Cart-page" */),
 );
 
 const App = () => (
@@ -80,6 +84,7 @@ const App = () => (
           path={routes.PLANNER}
           component={() => <AsyncPlannerPage />}
         />
+        <Cart exact path={routes.CART} component={() => <AsyncCartPage />} />
         <Route component={() => <AsyncNotFoundPage />} />
       </Switch>
     </Suspense>

@@ -177,6 +177,37 @@
       "ingredients": [],
       "category": "",
       "id": 13
+    },
+    {
+      "name": "",
+      "price": "",
+      "image": "",
+      "description": "",
+      "ingredients": [],
+      "category": "",
+      "id": 14
+    },
+    {
+      "name": "мс с",
+      "price": " аипи",
+      "image": "https://i.pinimg.com/236x/1c/b7/b8/1cb7b80c4fdd50198e37daf299f09eca.jpg",
+      "description": " см ",
+      "category": "soup",
+      "ingredients": [
+        "Кунжутное масло",
+        "Круглый рис",
+        "Консервированная фасоль"
+      ],
+      "id": 15
+    },
+    {
+      "name": "dcerfvr3v",
+      "price": "",
+      "image": "https://i.pinimg.com/236x/1c/b7/b8/1cb7b80c4fdd50198e37daf299f09eca.jpg",
+      "description": "",
+      "ingredients": [],
+      "category": "",
+      "id": 16
     }
   ],
   "categories": [
@@ -251,13 +282,6 @@
       "price": "703.00",
       "address": "0700 Furman Trail",
       "rating": 6
-    },
-    {
-      "address": "Al Ittihad Rd,Sheikh Khalifa Bin Zayed St",
-      "rating": "b",
-      "price": "b",
-      "date": "1/5/2019",
-      "id": 5
     }
   ]
 }

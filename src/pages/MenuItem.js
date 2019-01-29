@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from '../modules/menu/menuItem/DishContainer';
+import MenuItem from '../components/modules/menuItem';
 
 const MenuItemPage = ({ match, location, history }) => (
   <>
