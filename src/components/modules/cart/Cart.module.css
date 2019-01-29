@@ -1,6 +1,7 @@
 .cart_container h2 {
   padding: 10px;
   position: fixed;
+  right: 0;
 }
 .cart_container h2 span {
   padding: 20px;
