@@ -28,6 +28,7 @@
   background-color: rgb(3, 114, 57);
 }
 .cartTable_bodyRow td {
+  padding: 10px;
   text-align: center;
 }
 .cartTable_bodyRow td:first-child {
@@ -95,4 +96,9 @@
 td {
   border: 1px solid rgba(6, 53, 16, 0.26);
   /* border-collapse: collapse; */
+}
+.cartTable_tdQty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -68,7 +68,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 0;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .menu_item {
   display: flex;

@@ -129,7 +129,7 @@
     },
     {
       "name": "xfgff",
-      "price": "dfgfdgfg",
+      "price": "2",
       "image": "sfgsfg",
       "description": "fgf",
       "ingredients": [
@@ -150,64 +150,6 @@
       ],
       "category": "",
       "id": 10
-    },
-    {
-      "name": "",
-      "price": "",
-      "image": "",
-      "description": "",
-      "ingredients": [],
-      "category": "",
-      "id": 11
-    },
-    {
-      "name": "vearver",
-      "price": "rvv",
-      "image": "",
-      "description": "",
-      "ingredients": [],
-      "category": "",
-      "id": 12
-    },
-    {
-      "name": "",
-      "price": "",
-      "image": "",
-      "description": "",
-      "ingredients": [],
-      "category": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "price": "",
-      "image": "",
-      "description": "",
-      "ingredients": [],
-      "category": "",
-      "id": 14
-    },
-    {
-      "name": "мс с",
-      "price": " аипи",
-      "image": "https://i.pinimg.com/236x/1c/b7/b8/1cb7b80c4fdd50198e37daf299f09eca.jpg",
-      "description": " см ",
-      "category": "soup",
-      "ingredients": [
-        "Кунжутное масло",
-        "Круглый рис",
-        "Консервированная фасоль"
-      ],
-      "id": 15
-    },
-    {
-      "name": "dcerfvr3v",
-      "price": "",
-      "image": "https://i.pinimg.com/236x/1c/b7/b8/1cb7b80c4fdd50198e37daf299f09eca.jpg",
-      "description": "",
-      "ingredients": [],
-      "category": "",
-      "id": 16
     }
   ],
   "categories": [
@@ -268,13 +210,6 @@
       "price": "290.00",
       "address": "108 Quinn Plains",
       "rating": 10
-    },
-    {
-      "id": 2,
-      "date": "10/1/2018",
-      "price": "710.00",
-      "address": "331 Mills Mountains",
-      "rating": 9
     },
     {
       "id": 4,

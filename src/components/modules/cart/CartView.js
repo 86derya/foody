@@ -54,9 +54,11 @@ const CartView = ({
       </td>
       <td> {price} </td>
       <td>
-        <DecrementDishBtn id={id} />
-        {qty}
-        <IncrementDishBtn id={id} />
+        <div className={styles.cartTable_tdQty}>
+          <DecrementDishBtn id={id} />
+          <span>{qty}</span>
+          <IncrementDishBtn id={id} />
+        </div>
       </td>
       <td>{qty * price}</td>
       <td>
