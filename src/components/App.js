@@ -39,7 +39,9 @@ const AsyncNotFoundPage = lazy(() =>
 const AsyncCartPage = lazy(() =>
   import('../pages/Cart' /* webpackChunkName: "Cart-page" */),
 );
-
+const AsyncHomePage = lazy(() =>
+  import('../pages/Home' /* webpackChunkName: "Home-page" */),
+);
 const App = () => (
   <>
     <Header />
@@ -84,6 +86,7 @@ const App = () => (
           path={routes.PLANNER}
           component={() => <AsyncPlannerPage />}
         />
+        <Route exact path={routes.HOME} component={() => <AsyncHomePage />} />
         <Cart exact path={routes.CART} component={() => <AsyncCartPage />} />
         <Route component={() => <AsyncNotFoundPage />} />
       </Switch>

@@ -1,8 +1,9 @@
 import React from 'react';
+import UserAccount from '../components/userAccount';
 
 const AccountPage = () => (
   <div>
-    <h1>Account Page</h1>
+    <UserAccount />
   </div>
 );
 export default AccountPage;

@@ -1,4 +1,5 @@
 export default Object.freeze({
+  HOME: '/',
   AUTH: '/auth',
   MENU: '/menu',
   MENU_ITEM: '/menu/:id',
