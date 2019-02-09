@@ -45,3 +45,7 @@
   text-transform: uppercase;
   line-height: 15px;
 }
+.signOutBtn {
+  position: relative;
+  left: 140px;
+}

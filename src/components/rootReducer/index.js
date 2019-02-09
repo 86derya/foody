@@ -1,4 +1,8 @@
 import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+import sessionReducer from '../../session/sessionReducer';
 
 import {
   dishesReducer,
@@ -12,7 +16,18 @@ import {
 
 import cartReducer from '../modules/cart/duck/reducers';
 
-export default combineReducers({
+const rootPersistConfig = {
+  key: 'root',
+  storage,
+  whitelist: 'cart',
+};
+const sessionPersistConfig = {
+  key: 'session',
+  storage,
+  whitelist: ['token'],
+};
+
+const rootReducer = combineReducers({
   dishListIds: dishesReducer,
   cart: cartReducer,
   entities: entityReducer,
@@ -21,4 +36,7 @@ export default combineReducers({
   filterByName: filterByNameReducer,
   isLoading: loadingReducer,
   error: errorReducer,
+  session: persistReducer(sessionPersistConfig, sessionReducer),
 });
+
+export default persistReducer(rootPersistConfig, rootReducer);

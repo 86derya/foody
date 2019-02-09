@@ -7,12 +7,13 @@
   display: block;
   margin: 0 auto;
   padding: 20px;
-  width: 240px;
+  width: 400px;
   text-align: center;
 }
 
 .auth_form {
   display: flex;
+  width: 100%;
   flex-direction: column;
   box-shadow: 0 4px 4px 0 rgba(18, 58, 8, 0.2),
     0 6px 20px 0 rgba(6, 53, 9, 0.19);

@@ -4,17 +4,6 @@ import actions from './menuActions';
 
 axios.defaults.baseURL = 'http://localhost:3001';
 
-// const fetchMenuItems = () => async dispatch => {
-//   dispatch(actions.fetchRequest());
-
-//   try {
-//     const response = await axios.get(`/menu`);
-//     dispatch(actions.fetchSuccess(response.data));
-//   } catch (error) {
-//     dispatch(actions.fetchError(error));
-//   }
-// };
-
 const fetchMenuItems = category => async dispatch => {
   dispatch(actions.fetchRequest());
   try {

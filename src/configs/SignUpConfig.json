@@ -3,24 +3,28 @@
     "name": "name",
     "type": "name",
     "placeholder": "Your Name...",
-    "autoComplete": "off"
+    "autoComplete": "off",
+    "label": "Name"
   },
   {
     "name": "password",
     "type": "password",
     "placeholder": "Password...",
-    "autoComplete": "off"
+    "autoComplete": "off",
+    "label": "Password"
   },
   {
     "name": "email",
     "type": "email",
     "placeholder": "Email...",
-    "autoComplete": "off"
+    "autoComplete": "off",
+    "label": "@mail"
   },
   {
     "name": "phone",
     "type": "tel",
     "placeholder": "Phone Number...",
-    "autoComplete": "off"
+    "autoComplete": "off",
+    "label": "Contact Number"
   }
 ]

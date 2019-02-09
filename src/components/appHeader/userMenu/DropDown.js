@@ -5,7 +5,7 @@ import userNavItems from '../../../configs/userNav';
 
 import styles from './UserMenu.module.css';
 
-const DropDown = () => (
+const DropDown = ({ onSignOut }) => (
   <div className={styles.container}>
     <ul className={styles.userMenu__list}>
       {userNavItems.map(item => (
@@ -16,7 +16,9 @@ const DropDown = () => (
         </li>
       ))}
     </ul>
-    <button type="button">Log Out</button>
+    <button className={styles.signOutBtn} type="button" onClick={onSignOut}>
+      Log Out
+    </button>
   </div>
 );
 export default DropDown;

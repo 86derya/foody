@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Spinner from '../../spinner';
 import CategorySelector from './categorySelector';
@@ -38,15 +37,6 @@ const Menu = ({
           filter={filterByName}
           onFilterChange={({ target }) => onFilterByNameChange(target.value)}
         />
-        <Link
-          className={styles.addDish__link}
-          to={{
-            pathname: `${match.url}/add`,
-            state: { from: location },
-          }}
-        >
-          <button type="button" className={styles.addDishBtn} />
-        </Link>
         <MenuGrid
           dishList={dishList}
           match={match}

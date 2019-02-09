@@ -12,7 +12,7 @@ const getCartItemsQtyFigure = createSelector(
 
 const getCartItems = createSelector(
   [getCartIds, getCartItemsQty, getItemsEntities],
-  (ids, qties, dishes) =>
+  (ids, qties, dishes = {}) =>
     ids.map(id => ({
       ...dishes[id],
       qty: qties[id],

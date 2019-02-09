@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../OrderHistory.module.css';
 import tbodyCells from '../../../../configs/OrderHistoryTableConfig';
 
-const OrderHistoryTable = ({ orders, onShowDetails, onDelete }) => {
+const OrderHistoryTable = ({ orders, onShowDetails }) => {
   const ShowMoreBtn = id => (
     <button
       className={styles.button}
@@ -14,17 +14,7 @@ const OrderHistoryTable = ({ orders, onShowDetails, onDelete }) => {
       Детальнее
     </button>
   );
-  const DeleteBtn = id => (
-    <button
-      className={styles.button}
-      type="button"
-      onClick={() => {
-        onDelete(id);
-      }}
-    >
-      Удалить
-    </button>
-  );
+
   const th = tbodyCells.map(cell => <th key={cell}>{cell}</th>);
   const row = orders.map(({ id, date, price, address, rating }) => (
     <tr className={styles.tbody_row} key={id}>
@@ -34,9 +24,6 @@ const OrderHistoryTable = ({ orders, onShowDetails, onDelete }) => {
       <td> {rating} </td>
       <td className={styles.btn_cell}>
         <ShowMoreBtn id={id} />
-      </td>
-      <td className={styles.btn_cell}>
-        <DeleteBtn id={id} />
       </td>
     </tr>
   ));

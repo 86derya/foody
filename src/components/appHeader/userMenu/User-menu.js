@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react';
 import DropDown from './DropDown';
 import styles from './UserMenu.module.css';
-import users from '../../../data/users.json';
+import avatar from '../../../data/avatar.png';
 
 export default class UserMenu extends Component {
   state = {
@@ -36,21 +36,27 @@ export default class UserMenu extends Component {
 
   render() {
     const { isDropDownOpen } = this.state;
-    const user = users[0];
-    const userAvatar = (
+    const { user, onSignOut } = this.props;
+    const UserAvatar = (
       <img className={styles.user_avatar} src={user.avatar} alt="avatar" />
     );
+    const DefaultAvatar = (
+      <img className={styles.user_avatar} src={avatar} alt="avatar" />
+    );
+
     const userName = <span className={styles.user_name}>{user.name}</span>;
     return (
-      <div
-        className={styles.user_menu__container}
-        onClick={this.toggleDropDown}
-        ref={this.userNavContainer}
-      >
-        {userAvatar}
-        {userName}
-        {isDropDownOpen && <DropDown />}
-      </div>
+      <>
+        <div
+          className={styles.user_menu__container}
+          onClick={this.toggleDropDown}
+          ref={this.userNavContainer}
+        >
+          {user.avatar ? UserAvatar : DefaultAvatar}
+          {userName}
+          {isDropDownOpen && <DropDown onSignOut={onSignOut} />}
+        </div>
+      </>
     );
   }
 }

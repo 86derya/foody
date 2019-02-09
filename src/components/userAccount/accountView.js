@@ -1,12 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-import passProps from '../hocs/passProps';
-import users from '../../data/users.json';
+import { getUser } from '../../session/sessionSelectors';
 import formConfig from '../../configs/userAccountFormConfig.json';
 
 import styles from './Account.module.css';
 
 const Account = ({ onSubmit, user, onChange }) => {
+  console.log(user);
   const input = formConfig.map(el => (
     <input
       key={el.name}
@@ -22,7 +23,9 @@ const Account = ({ onSubmit, user, onChange }) => {
   return (
     <div className={styles.wrap}>
       <div className={styles.info}>
-        <img className={styles.avatar} src={user.avatar} alt={user.name} />
+        {user.avatar && (
+          <img className={styles.avatar} src={user.avatar} alt={user.name} />
+        )}
         <span className={styles.name}>Name: {user.name}</span>
         <span className={styles.phone}>Phone: {user.phone}</span>
         <span className={styles.email}>@: {user.email}</span>
@@ -34,5 +37,8 @@ const Account = ({ onSubmit, user, onChange }) => {
     </div>
   );
 };
+const mapStateToProps = state => ({
+  user: getUser(state),
+});
 
-export default passProps({ user: users[0] })(Account);
+export default connect(mapStateToProps)(Account);

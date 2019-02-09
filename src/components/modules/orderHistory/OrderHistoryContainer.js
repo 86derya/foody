@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import OrdersHistoryTable from './orderTable/OrdersHistoryTable';
-import NewOrderForm from './newOrderForm/NewOrderForm';
 import OrderDetailsTemplate from './orderTable/ModalOrderDetailsTemplate';
 import Modal from '../../modal';
 import styles from './OrderHistory.module.css';
@@ -14,7 +13,6 @@ export default class OrderHistory extends Component {
     orderDetails: {},
     isLoading: false,
     detailsShown: false,
-    newOrderFormShown: false,
   };
 
   componentDidMount() {
@@ -33,18 +31,10 @@ export default class OrderHistory extends Component {
     this.getOrderDetails(id);
   };
 
-  handleShowNewOrderForm = () => {
-    this.setState({
-      isModalOpen: true,
-      newOrderFormShown: true,
-    });
-  };
-
   closeModal = () => {
     this.setState({
       isModalOpen: false,
       detailsShown: false,
-      newOrderFormShown: false,
     });
   };
 
@@ -67,40 +57,6 @@ export default class OrderHistory extends Component {
     });
   };
 
-  handleDelete = ({ id }) => {
-    this.setState({ isLoading: true });
-    API.deleteOrderById(id).then(
-      this.setState(state => ({
-        orders: state.orders.filter(item => item.id !== id),
-        isLoading: false,
-      })),
-    );
-  };
-
-  postNewOrder = order => {
-    const { price, address, rating } = order;
-    this.setState({ isLoading: true });
-    return API.addOrder({
-      date: new Date().toLocaleDateString('en-US'),
-      price,
-      address,
-      rating,
-    });
-  };
-
-  handleSubmitNewOrder = order => {
-    this.postNewOrder(order).then(response =>
-      response.status === 201
-        ? this.setState(prevState => ({
-            orders: [...prevState.orders, response.data],
-            isLoading: false,
-            isModalOpen: false,
-            newOrderFormShown: false,
-          }))
-        : null,
-    );
-  };
-
   render() {
     const {
       isModalOpen,
@@ -108,18 +64,8 @@ export default class OrderHistory extends Component {
       orderDetails,
       isLoading,
       detailsShown,
-      newOrderFormShown,
     } = this.state;
 
-    const AddNewOrderBtn = () => (
-      <button
-        className={styles.add_new_order_button}
-        type="button"
-        onClick={this.handleShowNewOrderForm}
-      >
-        Add New Order
-      </button>
-    );
     return (
       <div className={styles.order_history}>
         {isLoading ? (
@@ -128,9 +74,6 @@ export default class OrderHistory extends Component {
           isModalOpen && (
             <Modal onClose={this.closeModal}>
               {detailsShown && <OrderDetailsTemplate order={orderDetails} />}
-              {newOrderFormShown && (
-                <NewOrderForm onPostOrder={this.handleSubmitNewOrder} />
-              )}
             </Modal>
           )
         )}
@@ -139,7 +82,6 @@ export default class OrderHistory extends Component {
           onShowDetails={this.handleShowDetails}
           onDelete={this.handleDelete}
         />
-        <AddNewOrderBtn />
       </div>
     );
   }

@@ -11,16 +11,17 @@ const getCategoryFromProps = props =>
 
 class MenuContainer extends Component {
   componentDidMount() {
+    const category = getCategoryFromProps(this.props);
     const {
       fetchMenuItems,
       fetchAvailableCategories,
       getFilterByCategory,
     } = this.props;
 
-    const category = getCategoryFromProps(this.props);
     getFilterByCategory(category);
 
     fetchAvailableCategories();
+
     return fetchMenuItems(category);
   }
 
