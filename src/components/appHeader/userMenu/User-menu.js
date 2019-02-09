@@ -53,6 +53,7 @@ export default class UserMenu extends Component {
           ref={this.userNavContainer}
         >
           {user.avatar ? UserAvatar : DefaultAvatar}
+          <span className={styles.loginedSpan}>Welcome, </span>
           {userName}
           {isDropDownOpen && <DropDown onSignOut={onSignOut} />}
         </div>

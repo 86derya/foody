@@ -32,7 +32,7 @@ class SignIn extends Component {
 
   render() {
     const input = SignInConfig.map(el => (
-      <label key={el.label}>
+      <label key={el.label} className={styles.label}>
         {el.label}
         <input
           key={el.name}

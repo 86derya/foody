@@ -33,7 +33,7 @@ class SignUp extends Component {
 
   render() {
     const input = SignUpConfig.map(el => (
-      <label key={el.label}>
+      <label key={el.label} className={styles.label}>
         {el.label}
         <input
           key={el.name}

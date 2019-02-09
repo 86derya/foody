@@ -39,7 +39,13 @@
       "image": "https://s1.eda.ru/StaticContent/Photos/121114213720/151024152626/p_O.png",
       "price": 100,
       "category": "soup",
-      "ingredients": ["Тыква", "Петрушка", "Сливки", "Бренди", "Куриный бульон"]
+      "ingredients": [
+        "Тыква",
+        "Петрушка",
+        "Сливки",
+        "Бренди",
+        "Куриный бульон"
+      ]
     },
     {
       "id": 4,
@@ -194,6 +200,13 @@
       "address": ";mk;km;mk",
       "rating": "10",
       "id": 5
+    },
+    {
+      "address": "kguyk",
+      "rating": "kfyu",
+      "price": "fkyuy",
+      "date": "2/9/2019",
+      "id": 6
     }
   ]
 }

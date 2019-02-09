@@ -19,6 +19,13 @@
   cursor: pointer;
   z-index: 900;
 }
+.loginedSpan {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  font-style: italic;
+  color: rgb(100, 93, 93);
+}
 .user_avatar {
   margin: 0;
   margin-right: 20px;
