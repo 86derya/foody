@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import routes from '../../../configs/routes';
+import withAuth from '../../hocs/withAuth';
 
+import routes from '../../../configs/routes';
 import styles from './userAuth.module.css';
 
 const userAuth = () => (
@@ -24,4 +25,4 @@ const userAuth = () => (
   </div>
 );
 
-export default userAuth;
+export default withAuth(userAuth);

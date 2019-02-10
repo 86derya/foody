@@ -10,6 +10,9 @@ function ids(state = [], { type, payload }) {
     case types.DELETE_FROM_CART:
       return state.filter(id => id !== payload.id);
 
+    case types.CLEAN_CART:
+      return payload;
+
     default:
       return state;
   }

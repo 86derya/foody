@@ -35,6 +35,7 @@ router.post('/signup', (req, res) => {
       res.status(409).json({
         message: error,
       });
+      console.log(error);
     });
 });
 

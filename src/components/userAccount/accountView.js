@@ -8,7 +8,6 @@ import formConfig from '../../configs/userAccountFormConfig.json';
 import styles from './Account.module.css';
 
 const Account = ({ onSubmit, user, onChange }) => {
-  console.log(user);
   const input = formConfig.map(el => (
     <label key={el.label} className={styles.label}>
       {el.label}

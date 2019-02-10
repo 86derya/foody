@@ -20,7 +20,13 @@ const addToCart = id => ({
   payload: { id },
 });
 
+export const cleanCart = () => ({
+  type: types.CLEAN_CART,
+  payload: [],
+});
+
 export default {
+  cleanCart,
   addToCart,
   deleteFromCart,
   incrementQty,

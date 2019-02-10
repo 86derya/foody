@@ -36,7 +36,7 @@ export default class UserMenu extends Component {
 
   render() {
     const { isDropDownOpen } = this.state;
-    const { user, onSignOut } = this.props;
+    const { user, onSignOut, history } = this.props;
     const UserAvatar = (
       <img className={styles.user_avatar} src={user.avatar} alt="avatar" />
     );
@@ -55,7 +55,9 @@ export default class UserMenu extends Component {
           {user.avatar ? UserAvatar : DefaultAvatar}
           <span className={styles.loginedSpan}>Welcome, </span>
           {userName}
-          {isDropDownOpen && <DropDown onSignOut={onSignOut} />}
+          {isDropDownOpen && (
+            <DropDown onSignOut={onSignOut} history={history} />
+          )}
         </div>
       </>
     );

@@ -7,7 +7,7 @@ const getCartItemsQty = state => state.cart.qty;
 
 const getCartItemsQtyFigure = createSelector(
   getCartIds,
-  ids => ids.length,
+  ids => (ids ? ids.length : []),
 );
 
 const getCartItems = createSelector(

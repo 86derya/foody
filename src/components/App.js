@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Header {...this.props} />
         <Suspense fallback={<Spinner />}>
           <Switch>
             <Route

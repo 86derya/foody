@@ -11,14 +11,14 @@ import { signOut } from '../../session/sessionOperations';
 
 import styles from './AppHeader.module.css';
 
-const Header = ({ isAuthenticated, user, onSignOut }) => (
+const Header = ({ isAuthenticated, user, onSignOut, history, location }) => (
   <div className={styles.header}>
     <SiteLogo />
     <SiteNav />
     {isAuthenticated ? (
-      <UserMenu user={user} onSignOut={onSignOut} />
+      <UserMenu user={user} onSignOut={onSignOut} history={history} />
     ) : (
-      <UserAuth />
+      <UserAuth history={history} location={location} />
     )}
     <CartLink />
   </div>

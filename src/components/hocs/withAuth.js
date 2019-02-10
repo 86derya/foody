@@ -10,7 +10,7 @@ const withAuth = WrappedComponent => {
       const { isAuthenticated, location, history } = this.props;
 
       const { from } = location.state || { from: { pathname: '/' } };
-      console.log(location);
+
       if (isAuthenticated) {
         history.push({
           pathname: from.pathname,

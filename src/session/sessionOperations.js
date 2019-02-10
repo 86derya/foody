@@ -10,6 +10,7 @@ import {
   getCurrentUserSuccess,
 } from './sessionActions';
 
+import { cleanCart } from '../components/modules/cart/duck/cartActions';
 import { getToken } from './sessionSelectors';
 
 const setAuthHeader = token => {
@@ -54,9 +55,12 @@ export const signOut = () => (dispatch, getState) => {
     },
   };
 
-  axios
+  return axios
     .post('http://localhost:4040/auth/signout', {}, config)
-    .then(() => dispatch(signOutSuccess()));
+    .then(() => {
+      dispatch(signOutSuccess());
+      dispatch(cleanCart());
+    });
 };
 
 export const getCurrentUser = () => (dispatch, getState) => {
