@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../configs/routes';
 
-import banan from '../data/banan.png';
+// import banan from '../data/banan.png';
 import styles from '../components/index.module.css';
 
 const NotFoundPage = () => (
@@ -17,7 +17,7 @@ const NotFoundPage = () => (
       </Link>
       to return to the menu page.
     </p>
-    <img src={banan} alt="not_found" width="600 px" />
+    {/* <img src={banan} alt="not_found" width="600 px" /> */}
   </div>
 );
 export default NotFoundPage;
